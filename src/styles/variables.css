@@ -1,0 +1,66 @@
+:root {
+  /* Foundation & Surfaces */
+  --surface: #fff5eb;
+  --surface-container-low: #f9efe4;
+  --surface-container: #f1e6db;
+  --surface-container-highest: #e6dbcf;
+  --on-background: #332e28;
+  --inverse-surface: #110e08;
+
+  /* Data Accents */
+  --primary: #00a3ff;
+  --primary-container: #0077cc;
+  --on-primary: #ffffff;
+  --on-primary-fixed: #110e08;
+  --secondary: #fef9c3;
+  --secondary-container: #ffd308;
+  --on-secondary-container: #332e28;
+
+  /* Structural */
+  --outline: #7d766e;
+
+  /* Typography — Display */
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --display-lg: 3.5rem;
+  --display-md: 2.75rem;
+  --display-sm: 2rem;
+
+  /* Typography — Headline */
+  --font-headline: 'Plus Jakarta Sans', sans-serif;
+  --headline-lg: 2.25rem;
+  --headline-md: 1.75rem;
+  --headline-sm: 1.25rem;
+
+  /* Typography — Body */
+  --font-body: 'Inter', sans-serif;
+  --body-lg: 1rem;
+  --body-md: 0.875rem;
+  --body-sm: 0.75rem;
+
+  /* Typography — Label */
+  --font-label: 'Space Grotesk', monospace;
+  --label-lg: 0.875rem;
+  --label-md: 0.75rem;
+  --label-sm: 0.625rem;
+
+  /* Spacing scale (base 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Shadows — Boxy Offset */
+  --shadow-subtle: 4px 4px 0px rgba(51, 46, 40, 0.2);
+  --shadow-hard: 4px 4px 0px var(--on-primary-fixed);
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 64px;
+}
