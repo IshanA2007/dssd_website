@@ -1,0 +1,113 @@
+/* Tablet: < 1024px */
+@media (max-width: 1024px) {
+  :root {
+    --display-lg: 2.75rem;
+    --display-md: 2.25rem;
+  }
+
+  .stats__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .board__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .team-hero__image {
+    height: 200px;
+  }
+
+  .pillars__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .join-content {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-cta__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile: < 640px */
+@media (max-width: 640px) {
+  :root {
+    --display-lg: 2rem;
+    --display-md: 1.75rem;
+    --headline-lg: 1.75rem;
+    --headline-md: 1.5rem;
+  }
+
+  .navbar__links {
+    gap: var(--space-4);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .featured__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-filters {
+    flex-wrap: wrap;
+  }
+
+  .projects-filters__list {
+    flex-wrap: wrap;
+  }
+
+  .stats__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .board__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pillars__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .newsletter__form {
+    flex-direction: column;
+  }
+
+  .team-cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
