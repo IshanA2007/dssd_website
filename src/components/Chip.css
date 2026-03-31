@@ -1,0 +1,22 @@
+.chip {
+  display: inline-block;
+  font-size: var(--label-md);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--on-primary-fixed);
+  white-space: nowrap;
+}
+
+.chip--dark {
+  background-color: var(--inverse-surface);
+  color: var(--surface);
+}
+
+.chip--accent {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.chip--outline {
+  background-color: transparent;
+  color: var(--on-background);
+}

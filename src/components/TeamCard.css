@@ -1,0 +1,31 @@
+.team-card {
+  border: 2px solid var(--on-primary-fixed);
+}
+
+.team-card__image {
+  height: 220px;
+  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+}
+
+.team-card__tag {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+}
+
+.team-card__name {
+  font-family: var(--font-headline);
+  font-size: var(--body-lg);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-4) var(--space-1);
+}
+
+.team-card__role {
+  font-size: var(--label-md);
+  color: var(--primary);
+  padding: 0 var(--space-4) var(--space-4);
+}
