@@ -16,7 +16,7 @@ export interface Project {
   status: 'Active' | 'Completed'
   tags: string[]
   icon: string
-  /** Optional hero image for featured cards on the home page */
+  /** Optional hero image — used on featured cards and the project detail page */
   imageUrl?: string
   // detail-page fields (all optional)
   longDescription?: string
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     icon: '⚡',
     imageUrl:
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
-    longDescription: "Developing a geospatial dashboard to identify optimal locations for micro-grid solar installations across Virginia's rural counties. This project partners with the Virginia Department of Energy to deliver actionable infrastructure recommendations to local planners and policymakers.",
+    longDescription: "This project addresses Virginia's rural energy gap by building an open-access geospatial tool that county planners and policymakers can use to prioritize micro-grid solar investments. Partnering with the Virginia Department of Energy, we translate raw satellite and census data into an interactive suitability map that ranks every rural census tract by solar potential. The goal is to move infrastructure decisions from intuition to evidence.",
     methodology: [
       "We aggregated satellite imagery, county energy consumption records, and topographical data to build a composite suitability score for each census tract.",
       "A gradient boosting model (XGBoost) was trained on known solar farm locations to validate the scoring system. Visualizations were built in Tableau and embedded in a public-facing dashboard accessible to county planners.",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     icon: '🍽️',
     imageUrl:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    longDescription: "Analyzing transit patterns and grocery store accessibility to propose mobile market routes for underserved Charlottesville neighborhoods. Data was collected from city transit APIs and mapped against USDA food desert designations.",
+    longDescription: "Charlottesville's food access landscape is shaped by gaps between transit coverage and grocery store locations that disproportionately affect low-income residents. This project quantifies those gaps using city transit APIs and USDA food desert designations, then proposes concrete mobile market routes that city planners can act on. Our analysis gives the City of Charlottesville an evidence base for allocating mobile food resources where they will have the highest impact.",
     methodology: [
       "We combined GTFS transit data with grocery store locations and demographic data from the American Community Survey to compute accessibility scores per census block.",
       "Route optimization was performed using the OR-Tools library to suggest three viable mobile market corridors minimizing total travel time.",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     icon: '🎓',
     imageUrl:
       'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80',
-    longDescription: "Using machine learning to predict dropout risks and resource needs for local K-12 public schools based on historical socio-economic data. The model flags at-risk students early so interventions can be targeted before academic decline.",
+    longDescription: "Early identification of at-risk students is one of the most cost-effective interventions available to school districts, yet most rely on teacher intuition or lagging indicators like failing grades. This project builds a predictive model trained on a decade of enrollment, attendance, and socio-economic records to flag students before academic decline takes hold. Working with Albemarle County Schools, we surface the top contributing risk factors per student using SHAP values so counselors can intervene with targeted support.",
     methodology: [
       "Historical enrollment, attendance, and free-lunch eligibility records spanning 10 years were cleaned and merged into a unified dataset with 45 features per student-year record.",
       "A random forest classifier was trained with 5-fold cross-validation, achieving an F1 score of 0.81 on held-out test data. SHAP values were used to surface the top contributing factors to each prediction.",
