@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import Chip from './Chip'
 import './Card.css'
 
 interface CardProps {
+  id: string
   title: string
   description: string
   category: string
@@ -10,9 +12,9 @@ interface CardProps {
   icon?: string
 }
 
-export default function Card({ title, description, category, status, tags, icon }: CardProps) {
+export default function Card({ id, title, description, category, status, tags, icon }: CardProps) {
   return (
-    <article className="card">
+    <Link to={`/projects/${id}`} className="card">
       <div className="card__image">
         <Chip
           label={status}
@@ -35,6 +37,6 @@ export default function Card({ title, description, category, status, tags, icon 
           </div>
         )}
       </div>
-    </article>
+    </Link>
   )
 }

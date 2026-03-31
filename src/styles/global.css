@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--body-lg);
@@ -6,6 +10,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -38,7 +43,40 @@ img {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+}
+
+/* Full-bleed dot grid behind page hero / header sections */
+.page-hero--dots {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero--dots::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  background-image: radial-gradient(rgba(51, 46, 40, 0.26) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.page-hero--dots.page-hero--dots--inverse::before {
+  opacity: 1;
+  background-image: radial-gradient(rgba(255, 245, 235, 0.24) 1px, transparent 1px);
+}
+
+.page-hero--dots > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Label font utility */
@@ -47,4 +85,23 @@ img {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
 }

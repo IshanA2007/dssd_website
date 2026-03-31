@@ -1,10 +1,11 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background-color: rgba(255, 245, 235, 0.8);
-  backdrop-filter: blur(20px);
+  background-color: var(--surface);
   border-bottom: 2px solid var(--outline);
 }
 
@@ -16,45 +17,168 @@
 }
 
 .navbar__logo {
-  font-family: var(--font-label);
-  font-size: var(--headline-sm);
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.navbar__logo:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.navbar__logo-img {
+  display: block;
+  height: 2.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .navbar__logo-img {
+    height: 2.75rem;
+  }
 }
 
 .navbar__links {
-  display: flex;
+  display: none;
   gap: var(--space-8);
 }
 
-.navbar__link {
-  font-family: var(--font-label);
-  font-size: var(--label-lg);
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  padding: var(--space-2) 0;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s;
+@media (min-width: 768px) {
+  .navbar__links {
+    display: flex;
+  }
 }
 
-.navbar__link:hover,
-.navbar__link.active {
-  border-bottom-color: var(--on-background);
+.navbar__link {
+  font-family: var(--font-display);
+  font-size: var(--body-md);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: var(--space-1) 0;
+  border-bottom: 2px solid transparent;
+  color: var(--on-background);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar__link:hover {
+  color: var(--primary);
+}
+
+.navbar__link--active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
 }
 
 .navbar__cta {
-  font-family: var(--font-label);
-  font-size: var(--label-lg);
-  font-weight: 600;
+  font-size: var(--label-md);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   padding: var(--space-2) var(--space-6);
   background-color: var(--primary);
   color: var(--on-primary);
   border: 2px solid var(--on-primary-fixed);
   cursor: pointer;
-  transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s, transform 0.15s;
   box-shadow: var(--shadow-hard);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar__cta {
+    display: inline-flex;
+  }
 }
 
 .navbar__cta:hover {
   box-shadow: 0 0 0 transparent;
+  transform: translate(4px, 4px);
+}
+
+/* Hamburger button */
+.navbar__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 2px solid var(--on-primary-fixed);
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar__burger {
+    display: none;
+  }
+}
+
+.navbar__burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--on-background);
+  transition: transform 0.2s, opacity 0.2s;
+  transform-origin: center;
+}
+
+.navbar__burger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__burger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.navbar__mobile-menu {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--surface);
+  border-top: 2px solid var(--outline);
+  z-index: 99;
+  overflow-y: auto;
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--space-6);
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-display);
+  font-size: var(--headline-sm);
+  font-weight: 700;
+  color: var(--on-background);
+  padding: var(--space-4) 0;
+  border-bottom: 2px solid var(--surface-container-highest);
+  display: block;
+  transition: color 0.2s;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+  color: var(--primary);
 }

@@ -44,3 +44,32 @@
   box-shadow: 0 0 0 transparent;
   transform: translate(2px, 2px);
 }
+
+.btn--surface {
+  background-color: var(--surface);
+  color: var(--on-background);
+  font-family: var(--font-display);
+  box-shadow: var(--shadow-hard);
+}
+
+.btn--surface:hover {
+  box-shadow: 0 0 0 transparent;
+  transform: translate(4px, 4px);
+}
+
+.btn--inverse {
+  background-color: var(--on-background);
+  color: var(--surface);
+  font-family: var(--font-display);
+  box-shadow: var(--shadow-hard);
+}
+
+.btn--inverse:hover {
+  box-shadow: 0 0 0 transparent;
+  transform: translate(4px, 4px);
+}
+
+.btn--lg {
+  font-size: var(--headline-sm);
+  padding: var(--space-6) var(--space-10);
+}

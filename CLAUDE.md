@@ -20,7 +20,7 @@ The color strategy is built on high-contrast foundations punctuated by vibrant "
 
 ### Data Accents
 - **Primary (`#00a3ff`)**: "Light Blue." Use for main actions (Start, Sign Up) and key interactive states.
-- **Secondary (`#fef9c3`) / Secondary Container (`#ffd308`)**: "Muted Yellow." Use for highlighting critical information, labels, or secondary CTA highlights.
+- **Secondary (`#fef9c3`) / Secondary Container (`#fef9c3`)**: "Muted Yellow." Use for highlighting critical information, labels, or secondary CTA highlights.
 
 ### The "No-Line" Rule
 Prohibit the use of standard 1px grey borders for sectioning. Boundaries must be defined by:

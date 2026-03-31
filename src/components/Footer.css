@@ -1,55 +1,94 @@
-.footer__accent {
-  height: 6px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary-container));
-}
-
-.footer__body {
+.footer {
   background-color: var(--inverse-surface);
   color: var(--surface);
-  padding: var(--space-12) 0 var(--space-8);
+  border-top: 4px solid var(--primary);
+  padding: var(--space-12) 0 var(--space-10);
 }
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
 }
 
 .footer__logo {
   font-size: var(--headline-sm);
   font-weight: 700;
-  margin-bottom: var(--space-3);
+  color: var(--surface);
+  margin-bottom: var(--space-4);
 }
 
 .footer__tagline {
+  font-family: var(--font-body);
   font-size: var(--body-md);
-  opacity: 0.7;
-  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.6;
+  color: var(--surface-container-highest);
   max-width: 280px;
+}
+
+.footer__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
 }
 
 .footer__col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 .footer__link {
   font-size: var(--label-md);
-  opacity: 0.7;
-  transition: opacity 0.2s;
+  color: var(--surface-container-highest);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+a.footer__link:hover,
+.footer__link:hover {
+  color: var(--secondary-container);
+}
+
+.footer__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer__aside {
+    min-height: 100%;
+  }
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.footer__social-icon {
+  font-size: 1.5rem;
+  color: var(--secondary-container);
   cursor: pointer;
 }
 
-.footer__link:hover {
-  opacity: 1;
-}
-
-.footer__copy {
-  grid-column: 1 / -1;
-  margin-top: var(--space-8);
-  padding-top: var(--space-6);
-  border-top: 2px solid rgba(255, 245, 235, 0.15);
-  font-size: var(--label-sm);
-  opacity: 0.5;
+.footer__copyright {
+  font-size: 0.625rem;
+  letter-spacing: 0.06em;
+  color: var(--surface-container-highest);
+  line-height: 1.5;
+  text-transform: none;
+  max-width: 280px;
 }

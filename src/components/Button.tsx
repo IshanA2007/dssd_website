@@ -4,13 +4,20 @@ import './Button.css'
 
 interface ButtonProps {
   children: ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
+  variant?: 'primary' | 'secondary' | 'outline' | 'surface' | 'inverse'
+  size?: 'default' | 'large'
   to?: string
   onClick?: () => void
 }
 
-export default function Button({ children, variant = 'primary', to, onClick }: ButtonProps) {
-  const className = `btn btn--${variant}`
+export default function Button({
+  children,
+  variant = 'primary',
+  size = 'default',
+  to,
+  onClick,
+}: ButtonProps) {
+  const className = `btn btn--${variant}${size === 'large' ? ' btn--lg' : ''}`
 
   if (to) {
     return <Link to={to} className={className}>{children}</Link>

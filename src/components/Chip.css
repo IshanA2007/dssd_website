@@ -20,3 +20,7 @@
   background-color: transparent;
   color: var(--on-background);
 }
+
+.chip--elevated {
+  box-shadow: var(--shadow-hard);
+}

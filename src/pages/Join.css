@@ -1,45 +1,64 @@
 /* Hero */
 .join-hero {
-  background-color: var(--inverse-surface);
-  color: var(--surface);
+  background-color: var(--surface);
+  color: var(--on-background);
   padding: var(--space-16) 0;
+  border-bottom: 2px solid var(--outline);
 }
 
 .join-hero__title {
-  font-size: var(--display-md);
+  font-size: clamp(1.75rem, 7vw, var(--display-md));
   font-weight: 800;
   margin-top: var(--space-4);
   margin-bottom: var(--space-6);
 }
 
 .join-hero__accent {
-  color: var(--secondary-container);
+  color: var(--primary);
   font-style: italic;
 }
 
 .join-hero__subtitle {
   max-width: 520px;
   font-size: var(--body-lg);
-  opacity: 0.8;
+  color: var(--on-background);
+  opacity: 0.72;
   line-height: 1.6;
 }
 
 /* Content */
 .join-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-12);
-  padding: var(--space-16) 0;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
   align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .join-content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.join-content > * {
+  min-width: 0;
 }
 
 /* Form */
 .join-form {
   border: 2px solid var(--on-primary-fixed);
+  background-color: var(--surface);
   padding: var(--space-8);
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  box-shadow: var(--shadow-hard);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .join-form__heading {
@@ -48,12 +67,70 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  color: var(--on-background);
+}
+
+.join-form__heading-icon {
+  font-size: 1.75rem;
+  color: var(--primary);
+  flex-shrink: 0;
 }
 
 .join-form__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .join-form__row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+/* Form subheading */
+.join-form__subheading {
+  font-size: var(--body-md);
+  color: var(--on-background);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-top: calc(var(--space-2) * -1);
+}
+
+/* Divider */
+.join-form__divider {
+  height: 2px;
+  background-color: var(--surface-container-highest);
+}
+
+/* Apply section */
+.join-form__apply {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.join-form__apply-label {
+  font-size: var(--label-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--on-background);
+  opacity: 0.6;
+}
+
+.join-form__apply-closed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.join-form__apply-note {
+  font-size: var(--label-sm);
+  color: var(--on-background);
+  opacity: 0.55;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* Sidebar */
@@ -68,6 +145,7 @@
   background-color: var(--surface-container-low);
   border: 2px solid var(--on-primary-fixed);
   padding: var(--space-8);
+  box-shadow: var(--shadow-hard);
 }
 
 .join-process__title {
@@ -86,8 +164,18 @@
 }
 
 .join-process__step {
+  display: block;
+}
+
+.join-process__step-reveal {
   display: flex;
   gap: var(--space-4);
+  width: 100%;
+}
+
+.join-form-reveal {
+  width: 100%;
+  min-width: 0;
 }
 
 .join-process__num {
@@ -139,24 +227,45 @@
   text-align: center;
 }
 
+.newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.newsletter__inner > .reveal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .newsletter__title {
   font-size: var(--headline-lg);
   font-weight: 700;
-  margin-bottom: var(--space-4);
+  margin: 0;
 }
 
 .newsletter__text {
   font-size: var(--body-lg);
   opacity: 0.7;
-  margin-bottom: var(--space-8);
+  margin: 0;
 }
 
 .newsletter__form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: var(--space-3);
   max-width: 460px;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .newsletter__form {
+    flex-direction: row;
+  }
 }
 
 .newsletter__input {

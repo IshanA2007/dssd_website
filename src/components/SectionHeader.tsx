@@ -17,7 +17,10 @@ export default function SectionHeader({ title, subtitle, linkText, linkTo }: Sec
       </div>
       {linkText && linkTo && (
         <Link to={linkTo} className="section-header__link label">
-          {linkText} &rarr;
+          {linkText}
+          <span className="material-symbols-outlined section-header__icon" aria-hidden>
+            arrow_right_alt
+          </span>
         </Link>
       )}
     </div>
