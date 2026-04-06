@@ -128,8 +128,13 @@ export default function Join() {
           <Reveal variant="skew-up" delayMs={220}>
             <div className="join-faq">
               <h3 className="join-faq__title">
-                <span className="material-symbols-outlined join-form__heading-icon" aria-hidden>
-                  calendar_month
+                <span className="join-form__heading-icon" aria-hidden>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" width="24" height="24">
+                    <rect x="3" y="3" width="18" height="18" />
+                    <line x1="3" y1="9" x2="21" y2="9" />
+                    <line x1="8" y1="12.5" x2="16" y2="12.5" />
+                    <line x1="8" y1="16" x2="13" y2="16" />
+                  </svg>
                 </span>
                 Common Questions
               </h3>
