@@ -128,7 +128,10 @@ export default function Join() {
           <Reveal variant="skew-up" delayMs={220}>
             <div className="join-faq">
               <h3 className="join-faq__title">
-                <span>&#x1f4cb;</span> Common Questions
+                <span className="material-symbols-outlined join-form__heading-icon" aria-hidden>
+                  calendar_month
+                </span>
+                Common Questions
               </h3>
               {faqItems.map(item => (
                 <AccordionItem key={item.question} {...item} />
